@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/bootstrap.min.css')}}">
+    
+
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- <script href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script> -->
+
+    <!-- <link rel="stylesheet" type="text/css" href="core.css"> -->
+    <title>Octopus</title>
+    <style>
+        html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
+    </style>
+</head>
+<body class="w3-theme-l5">
+
+    <!-- Navbar -->
+    <div class="w3-top">
+     <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
+      <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+      <a href=href="{{url_for('index')}}"  class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><i class="fa fa-home w3-margin-right"></i>ComWall</a>
+      <a href="{{ url_for('view') }}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="News">Sign out <i class="fa fa-user"></i></a>
+      <a href="https://www.w3schools.com/w3css/tryw3css_templates_social.htm#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Messages"><i class="fa fa-envelope"></i></a>
+      <div class="w3-dropdown-hover w3-hide-small">
+        <button class="w3-button w3-padding-large" title="Notifications"><i class="fa fa-bell"></i><span class="w3-badge w3-right w3-small w3-green">3</span></button>     
+        <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
+          <a href="https://www.w3schools.com/w3css/tryw3css_templates_social.htm#" class="w3-bar-item w3-button">One new friend request</a>
+          <a href="https://www.w3schools.com/w3css/tryw3css_templates_social.htm#" class="w3-bar-item w3-button">John Doe posted on your wall</a>
+          <a href="https://www.w3schools.com/w3css/tryw3css_templates_social.htm#" class="w3-bar-item w3-button">Ewuresi likes your post</a>
+        </div>
+      </div>
+      <!-- <a href="https://www.w3schools.com/w3css/tryw3css_templates_social.htm#" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="My Account"> -->
+        <img src="https://www.w3schools.com/w3images/avatar2.png" class="w3-circle" style="height:23px;width:23px" alt="Avatar">
+      <!-- </a> -->
+     </div>
+    </div>
+    
+    <!-- Navbar on small screens -->
+    <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium w3-large">
+      <a href="https://www.w3schools.com/w3css/tryw3css_templates_social.htm#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
+      <a href="https://www.w3schools.com/w3css/tryw3css_templates_social.htm#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
+      <a href="https://www.w3schools.com/w3css/tryw3css_templates_social.htm#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
+      <a href="https://www.w3schools.com/w3css/tryw3css_templates_social.htm#" class="w3-bar-item w3-button w3-padding-large">My Profile</a>
+    </div>
+    
+    <!-- Page Container -->
+    <div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">    
+      <!-- The Grid -->
+      <div class="w3-row">
+        <!-- Left Column -->
+        <div class="w3-col m3">
+          <!-- Profile -->
+          <div class="w3-card w3-round w3-white">
+            <div class="w3-container">
+             <h4 class="w3-center">My Profile</h4>
+             <p class="w3-center"><img src="https://www.w3schools.com/w3images/avatar2.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
+             <hr>
+             <p><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i> Designer, UI</p>
+             <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> London, UK</p>
+             <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i> April 1, 1988</p>
+            </div>
+          </div>
+          <br>
+          
+          <!-- Accordion -->
+          <div class="w3-card w3-round">
+            <div class="w3-white">
+              <button onclick="myFunction(&#39;Demo1&#39;)" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i> My Groups</button>
+              <div id="Demo1" class="w3-hide w3-container">
+                <p>Some text..</p>
+              </div>
+              <button onclick="myFunction(&#39;Demo2&#39;)" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-calendar-check-o fa-fw w3-margin-right"></i> My Events</button>
+              <div id="Demo2" class="w3-hide w3-container">
+                <p>Some other text..</p>
+              </div>
+              <button onclick="myFunction(&#39;Demo3&#39;)" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-users fa-fw w3-margin-right"></i> My Photos</button>
+              <div id="Demo3" class="w3-hide w3-container">
+             <div class="w3-row-padding">
+             <br>
+               <div class="w3-half">
+                 <img src="{{url_for('static',filename = 'images/street1.jpg')}}" style="width:100%" class="w3-margin-bottom">
+               </div>
+               <div class="w3-half">
+                 <img src="{{url_for('static',filename = 'images/street2.jpg')}}" style="width:100%" class="w3-margin-bottom">
+               </div>
+               <div class="w3-half">
+                 <img src="{{url_for('static',filename = 'images/street3.jpg')}}" style="width:100%" class="w3-margin-bottom">
+               </div>
+               <div class="w3-half">
+                 <img src="{{url_for('static',filename = 'images/street4.jpg')}}" style="width:100%" class="w3-margin-bottom">
+               </div>
+               <div class="w3-half">
+                 <img src="{{url_for('static',filename = 'images/street5.jpg')}}" style="width:100%" class="w3-margin-bottom">
+               </div>
+               <div class="w3-half">
+                 <img src="{{url_for('static',filename = 'images/street6.jpg')}}" style="width:100%" class="w3-margin-bottom">
+               </div>
+             </div>
+              </div>
+            </div>      
+          </div>
+          <br>
+          
+          <!-- Interests --> 
+          <div class="w3-card w3-round w3-white w3-hide-small">
+            <div class="w3-container">
+              <p>Interests</p>
+              <p>
+                <span class="w3-tag w3-small w3-theme-d5">News</span>
+                <span class="w3-tag w3-small w3-theme-d4">W3Schools</span>
+                <span class="w3-tag w3-small w3-theme-d3">Labels</span>
+                <span class="w3-tag w3-small w3-theme-d2">Games</span>
+                <span class="w3-tag w3-small w3-theme-d1">Friends</span>
+                <span class="w3-tag w3-small w3-theme">Games</span>
+                <span class="w3-tag w3-small w3-theme-l1">Friends</span>
+                <span class="w3-tag w3-small w3-theme-l2">Food</span>
+                <span class="w3-tag w3-small w3-theme-l3">Design</span>
+                <span class="w3-tag w3-small w3-theme-l4">Art</span>
+                <span class="w3-tag w3-small w3-theme-l5">Photos</span>
+              </p>
+            </div>
+          </div>
+          <br>
+          
+          <!-- Alert Box -->
+          <div class="w3-container w3-display-container w3-round w3-theme-l4 w3-border w3-theme-border w3-margin-bottom w3-hide-small">
+            <span onclick="this.parentElement.style.display=&#39;none&#39;" class="w3-button w3-theme-l3 w3-display-topright">
+              <i class="fa fa-remove"></i>
+            </span>
+            <p><strong>Hey!</strong></p>
+            <p>People are looking at your profile. Find out who.</p>
+          </div>
+        
+        <!-- End Left Column -->
+        </div>
+        
+        <!-- Middle Column -->
+        <div class="w3-col m7">
+        
+          <div class="w3-row-padding">
+            <div class="w3-col m12">
+              <div class="w3-card w3-round w3-white">
+                <div class="w3-container w3-padding">
+                  <h6 class="w3-opacity">Making our communities better</h6>
+                  <input class="w3-border w3-padding" placeholder="Status: Feeling Patriotic" id="post" type="text" style="width:100%; margin-bottom: 5px">
+                  <button type="button" class="w3-button w3-theme" onclick="addPost()"><i class="fa fa-pencil"></i> &nbsp;Post</button> 
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="new-comment">
+          </div>
+
+          <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
+            <img src="https://www.w3schools.com/w3images/avatar2.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+            <span class="w3-right w3-opacity">10 min</span>
+            <h4>Akwasi Amponsah</h4><br>
+            <hr class="w3-clear">
+            <p>I was walking the streets of my neighbourhood and I realized that there are huge potholes in the middle of the road.
+              Who's responsible for this?! I'd like to request that it be fixed right now!
+            </p>
+              <div class="w3-row-padding" style="margin:0 -16px">
+                <div class="w3-half">
+                  <img src="https://ichef.bbci.co.uk/news/660/cpsprodpb/129DB/production/_104615267_9faf0b8c-02ef-4634-81b8-0d2d847439d0.jpg", style="width:100%" alt="pothole.jpg" class="w3-margin-bottom">
+                </div>
+                <div class="w3-half">
+                  <img src="https://cnet3.cbsistatic.com/img/wm3x_274P7uSNBm5cGVKWEzjuTc=/2018/02/20/25427701-2ec0-469b-ac26-8d8578910f92/potholes-1.jpg" style="width:100%" alt="Nature" >
+              </div>
+            </div>
+            <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i> &nbsp;Like</button> 
+            <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i> &nbsp;Comment</button> 
+          </div>
+
+          <!-- To put the comment section -->
+          <div class = "w3-container w3-card w3-white w3-round w3-margin"  id = "commenting">
+            <!-- Beginning of one comment portion -->
+            <div class = "row"><div class = "col-md-12"></div></div>
+            <div class = "row"><div class = "col-md-12"></div></div>
+            <div class = "row"><div class = "col-md-12"></div></div>
+            <div class = "row">
+              <div class = "col-md-3">
+                <div class = "row">
+                  <div class = "col-md-4"><a class = "avatar"><img class = "w3-circle" src ="https://ets2.lt/wp-content/uploads/profile_builder/avatars/userID_24995_originalAvatar_Cool-avatars-anonymous-avatar.jpg" width="30px"></a></div>
+                  <div class = "col-md-8"><p>Relevant Authority</p></div>
+                </div>
+              </div>
+              <div class = "col-md-6" style="background-color: #41F3D3">
+                <p>I'm sending someone to work on it right away!</p>
+              </div>
+              <div class = "col-md-3">
+                  <span style="color: #a9a9a9"><em>9 minutes ago</em></span>
+              </div>
+            </div>
+            <!-- End of one comment portion -->
+            <!-- Beginning of one comment portion -->
+            <div class = "row"><div class = "col-md-12"></div></div>
+            <div class = "row"><div class = "col-md-12"></div></div>
+            <div class = "row"><div class = "col-md-12"></div></div>
+            <div class = "row">
+                <div class = "col-md-3">
+                    <span style="color: #a9a9a9"><em>6 minutes ago</em></span>
+                </div>
+              <div class = "col-md-6" style="background-color: #C87CF6">
+                <p>That's much better! It's nice to see the government being proactive.</p>
+              </div>
+              <div class = "col-md-3">
+                  <div class = "row">
+                    <div class = "col-md-4"><a class = "avatar"><img class = "w3-circle" src ="https://www.w3schools.com/w3images/avatar2.png" width="30px"></a></div>
+                    <div class = "col-md-8"><p>Akwasi Amponsah</p></div>
+                  </div>
+                </div>
+            </div>
+            <!-- End of one comment portion -->
+            <!-- Beginning of one comment portion -->
+            <div class = "row"><div class = "col-md-12"></div></div>
+            <div class = "row"><div class = "col-md-12"></div></div>
+            <div class = "row"><div class = "col-md-12"></div></div>
+            <div class = "row">
+              <div class = "col-md-3">
+                <div class = "row">
+                  <div class = "col-md-4"><a class = "avatar"><img class = "w3-circle" src ="https://www.w3schools.com/w3images/avatar6.png" width="30px"></a></div>
+                  <div class = "col-md-8"><p>Maame Ama Annang</p></div>
+                </div>
+              </div>
+              <div class = "col-md-6" style="background-color: #93A6F5">
+                <p>Hmm! I really hope this isn't just a publicity gimmick, but that they actually fix the road.</p>
+              </div>
+              <div class = "col-md-3">
+                  <span style="color: #a9a9a9"><em>1 minute ago</em></span>
+              </div>
+            </div>
+            <!-- End of one comment portion -->
+            <div class = "row">
+              <div class = "col-lg-12">
+                  <form action = "#" method = "POST">
+                      <textarea placeholder="Please add your comment here" name = "comments" style="width: 100%;"></textarea>
+                      <div>
+                        <img class = "w3-circle" src = "https://www.w3schools.com/w3images/avatar2.png" width="30">
+                        <button type="submit">Submit comment</button>
+                      </div>
+                    </form>
+              </div>
+            </div>
+          </div>
+          <!-- End of comment section -->
+          
+          <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
+            <img src="https://www.w3schools.com/w3images/avatar6.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+            <span class="w3-right w3-opacity">16 min</span>
+            <h4>Maame Ama Annang</h4><br>
+            <hr class="w3-clear">
+            <p>There is a broken streetlight in front of my house, and last night, someone tried to break in! My children and I were terrified.
+              Can someone please fix this? I would really like to have peace of mind.</p>
+              <div class = "w3-row-padding" style="margin:0 -16px">
+                    <img src="https://seeclickfix.com/files/issue_images/0008/5245/2012-08-01_10.07.37.jpg" alt = "broken streetlight" style="width: 100%" class="w3-margin-bottom">
+              </div>
+            <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i> &nbsp;Like</button> 
+            <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i> &nbsp;Comment</button> 
+          </div>  
+    
+          <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
+            <img src="https://www.w3schools.com/w3images/avatar5.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+            <span class="w3-right w3-opacity">32 min</span>
+            <h4>Ewuresi Anne Mensah</h4><br>
+            <hr class="w3-clear">
+            <p>Have you seen this?<br>
+              Do you mean to tell me that the building collapsed <b>over a month ago</b> and nothing has been done to change it?<br>
+              Fix it now.
+            </p>
+            <img src="http://silverbirdtv.com/wp-content/uploads/2015/09/collapsed-school.jpg" style="width:100%" class="w3-margin-bottom">
+            <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i> &nbsp;Like</button> 
+            <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i> &nbsp;Comment</button> 
+          </div> 
+          
+        <!-- End Middle Column -->
+        </div>
+        
+        <!-- Right Column -->
+        <div class="w3-col m2">
+          <div class="w3-card w3-round w3-white w3-center">
+            <div class="w3-container">
+              <p>Upcoming Events:</p>
+              <img src="https://www.w3schools.com/w3images/lights.jpg" alt="Forest" style="width:100%;">
+              <p><strong>Holiday</strong></p>
+              <p>Friday 15:00</p>
+              <p><button class="w3-button w3-block w3-theme-l4">Info</button></p>
+            </div>
+          </div>
+          <br>
+          
+          <div class="w3-card w3-round w3-white w3-center">
+            <div class="w3-container">
+              <p>Friend Request</p>
+              <img src="https://www.w3schools.com/w3images/avatar6.png" alt="Avatar" style="width:50%"><br>
+              <span>Maame Ama Annang</span>
+              <div class="w3-row w3-opacity">
+                <div class="w3-half">
+                  <button class="w3-button w3-block w3-green w3-section" title="Accept"><i class="fa fa-check"></i></button>
+                </div>
+                <div class="w3-half">
+                  <button class="w3-button w3-block w3-red w3-section" title="Decline"><i class="fa fa-remove"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+          
+          <div class="w3-card w3-round w3-white w3-padding-16 w3-center">
+            <p>ADS</p>
+          </div>
+          <br>
+          
+          <div class="w3-card w3-round w3-white w3-padding-32 w3-center">
+            <p><i class="fa fa-bug w3-xxlarge"></i></p>
+          </div>
+          
+        <!-- End Right Column -->
+        </div>
+        
+      <!-- End Grid -->
+      </div>
+      
+    <!-- End Page Container -->
+    </div>
+    <br>
+    
+    <!-- Footer -->
+    <footer class="w3-container w3-theme-d3 w3-padding-16">
+      <center><h5>Let's build our Community</h5></center>
+    </footer>
+    
+    <script src="{{url_for('static',filename = 'jquery-3.2.1.min.js')}}"></script>
+    <script src = ../static/comment.js>
+      comment();
+    </script>
+     
+    <script>
+    // Accordion
+    function myFunction(id) {
+      var x = document.getElementById(id);
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+        x.previousElementSibling.className += " w3-theme-d1";
+      } else { 
+        x.className = x.className.replace("w3-show", "");
+        x.previousElementSibling.className = 
+        x.previousElementSibling.className.replace(" w3-theme-d1", "");
+      }
+    }
+    
+    // Used to toggle the menu on smaller screens when clicking on the menu button
+    function openNav() {
+      var x = document.getElementById("navDemo");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+      } else { 
+        x.className = x.className.replace(" w3-show", "");
+      }
+    }
+    </script>
+    
+    
+     <script src="{{url_for('static', filename = 'custom.js')}}"></script>
+    </body>
+</html>

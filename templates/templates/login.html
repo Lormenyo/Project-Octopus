@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+    <!--===============================================================================================-->
+	<!-- <link rel="icon" type="image/png" href="images/icons/favicon.ico"/> -->
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename = 'css/bootstrap.min.css')}}">
+    <!--===============================================================================================-->
+        <!-- <link rel="stylesheet" type="text/css" href="{{url_for('static',filename = 'css/bootstrap.min.css')}}"> -->
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename = 'css/font.min.css')}}">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename = 'css/animate.css')}}">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename = 'css/humburger.min.css')}}">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename = 'css/animstition.min.css')}}">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename = 'css/selector2.min.css')}}">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename = 'css/picker.css')}}">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename = 'css/util.min.css')}}">
+        <!-- <link rel="stylesheet" type="text/css" href="{{url_for('static',filename = 'css/main.css')}}"> -->
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename = 'css/main.css')}}">
+    <!--===============================================================================================-->
+    
+    <!-- <script src="main.js"></script> -->
+</head>
+<body>
+
+          <div class="limiter">
+            <div class="container-login100" style="background-image: url('../static/images/bg-01.jpg');">
+                <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+                    <form class="login100-form validate-form" methods="POST"action="/validate">
+                        <span class="login100-form-title p-b-49">
+                            Login
+                        </span>
+    
+                        <div class="wrap-input100 validate-input m-b-23" data-validate = "Username is required">
+                            <span class="label-input100">Email</span>
+                            <input class="input100" type="email" name="email" placeholder="Type your username">
+                            <span class="focus-input100" data-symbol="&#xf206;"></span>
+                        </div>
+    
+                        <div class="wrap-input100 validate-input" data-validate="Password is required">
+                            <span class="label-input100">Password</span>
+                            <input class="input100" type="password" name="pass" placeholder="Type your password">
+                            <span class="focus-input100" data-symbol="&#xf190;"></span>
+                        </div>
+                        
+                        <div class="text-right p-t-8 p-b-31">
+                            <a href="#">
+                                Forgot password?
+                            </a>
+                        </div>
+                        
+                        <div class="container-login100-form-btn">
+                            <div class="wrap-login100-form-btn">
+                                <div class="login100-form-bgbtn"></div>
+                                <button class="login100-form-btn">
+                                    Login
+                                </button>
+                            </div>
+                        </div>
+    
+                        <div class="flex-c-m" style="display:none">
+                            <a href="#" class="login100-social-item bg1">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+    
+                            <a href="#" class="login100-social-item bg2">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+    
+                            <a href="#" class="login100-social-item bg3">
+                                <i class="fa fa-google"></i>
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+    
+        <div id="dropDownSelect1"></div>
+        
+    <!--===============================================================================================-->
+        <script src="{{url_for('static',filename = 'jquery-3.2.1.min.js')}}"></script>
+    <!--===============================================================================================-->
+        <script src="{{url_for('static',filename = 'animsition.min.js')}}"></script>
+    <!--===============================================================================================-->
+        <script src="{{url_for('static',filename = 'popper.js')}}"></script>
+        <script src="{{url_for('static',filename = 'bootstrap.min.js')}}"></script>
+    <!--===============================================================================================-->
+        <script src="{{url_for('static',filename = 'select2.min.js')}}"></script>
+    <!--===============================================================================================-->
+        <script src="{{url_for('static',filename = 'moment.min.js')}}"></script>
+        <script src="{{url_for('static',filename = 'daterangepicker.js')}}"></script>
+    <!--===============================================================================================-->
+        <script src="{{url_for('static',filename = 'countdowntime.js')}}"></script>
+    <!--===============================================================================================-->
+        <script src="{{url_for('static',filename = 'main.js')}}"></script>
+    
+    
+</body>
+</html>
+   
+   
+   
