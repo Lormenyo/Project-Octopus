@@ -1,0 +1,41 @@
+/* .rel_auth {
+    background-color: #41F3D3;
+} */
+
+/* .comments {
+    display: flex;
+}
+
+.comments.author_comments .information {
+    order: 3;
+}
+
+.comments.author_comments .avatar {
+    order: 2;
+}
+
+.comments.author_commentsp{
+    order: 1;
+}
+
+@media(max-width: 700px) {
+    .comments.user_comments .information{
+        order: 3;
+    }
+        
+      .comments.user_comments .avatar{
+       order: 2;
+    }
+       
+      .comments.user_commentsp{
+       order: 1;
+    }
+
+    .comments p{
+        width: 100%;
+    }
+
+    .comments.author_comments{
+        justify-content: flex-start;
+    }
+} */
