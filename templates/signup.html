@@ -1,9 +1,69 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>Sign Up | Project Octopus</title>
+  <!-- adding the CSS (bootstrap)-->
+  <link href = "{{url_for('static', filename = 'bootstrap.min.css')}}" rel = "stylesheet">
+  <link href = "{{url_for('static', filename = 'custom.css')}}" rel = "stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+  <script href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
+  <script type="text/javascript" src="{{url_for('static', filename= 'main.js')}}"></script>
 </head>
 <body>
-    <h1>Hey</h1>
+
+    <div class="container">
+
+
+<div class="card bg-light">
+    <article class="card-body mx-auto" style="max-width: 400px;">
+        <h4 class="card-title mt-3 text-center">Create Account</h4>
+        <p class="text-center">Get started with your free account</p>
+        
+        <form method="POST" action="/logdata">
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+             </div>
+            <input name="username" class="form-control" placeholder="Full name" type="text" id="username">
+        </div> <!-- form-group// -->
+        <div class = "form-group input-group">
+          <div class = "input-group-prepend">
+            <span class = "input-group-text"> <i class = "fa fa-plus"></i> </span>
+          </div>
+            <input name ="userage" class = "form-control" placeholder="Age (in years)" type="number" id="userage">
+        </div> <!-- form-group// -->
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+             </div>
+            <input name="useremail" class="form-control" placeholder="Email address" type="email" id="useremail">
+        </div> <!-- form-group// -->
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+            </div>
+            <input name="userphone" class="form-control" placeholder="Phone number" type="text" id="userphone">
+        </div> <!-- form-group// -->
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+            </div>
+            <input name = "userpassword" class="form-control" placeholder="Create password" type="password" id="userpassword">
+        </div> <!-- form-group// -->
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block" > Sign Up  </button>
+        </div> <!-- form-group// -->
+        <p class="text-center">Have an account? <a href="{{url_for('login')}}">Log In</a> </p>
+    </form>
+    </article>
+    </div> <!-- card.// -->
+    
+
+</div> 
+<!--container end.//-->
+
+<br><br>
+
 </body>
 </html>

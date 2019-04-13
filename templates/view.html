@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="{{url_for('static', filename = 'css/bootstrap.min.css')}}">
-    
-
     <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -26,19 +23,11 @@
     <div class="w3-top">
      <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
       <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
-      <a href=href="{{url_for('index')}}"  class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><i class="fa fa-home w3-margin-right"></i>ComWall</a>
-      <a href="{{ url_for('view') }}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="News">Sign out <i class="fa fa-user"></i></a>
-      <a href="https://www.w3schools.com/w3css/tryw3css_templates_social.htm#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Messages"><i class="fa fa-envelope"></i></a>
-      <div class="w3-dropdown-hover w3-hide-small">
-        <button class="w3-button w3-padding-large" title="Notifications"><i class="fa fa-bell"></i><span class="w3-badge w3-right w3-small w3-green">3</span></button>     
-        <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
-          <a href="https://www.w3schools.com/w3css/tryw3css_templates_social.htm#" class="w3-bar-item w3-button">One new friend request</a>
-          <a href="https://www.w3schools.com/w3css/tryw3css_templates_social.htm#" class="w3-bar-item w3-button">John Doe posted on your wall</a>
-          <a href="https://www.w3schools.com/w3css/tryw3css_templates_social.htm#" class="w3-bar-item w3-button">Ewuresi likes your post</a>
-        </div>
-      </div>
+      <a href="{{url_for('index')}}" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><i class="fa fa-home w3-margin-right"></i>ComWall</a>
+      <a href="{{url_for('signup')}}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="News">Sign up <i class="fa fa-user"></i></a>
+      <a href="{{url_for('login')}}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Account Settings">Login <i class="fa fa-user"></i></a>
+      <!-- <a href="https://www.w3schools.com/w3css/tryw3css_templates_social.htm#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Messages"><i class="fa fa-envelope"></i></a> -->
       <!-- <a href="https://www.w3schools.com/w3css/tryw3css_templates_social.htm#" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="My Account"> -->
-        <img src="https://www.w3schools.com/w3images/avatar2.png" class="w3-circle" style="height:23px;width:23px" alt="Avatar">
       <!-- </a> -->
      </div>
     </div>
@@ -60,19 +49,19 @@
           <!-- Profile -->
           <div class="w3-card w3-round w3-white">
             <div class="w3-container">
-             <h4 class="w3-center">My Profile</h4>
-             <p class="w3-center"><img src="https://www.w3schools.com/w3images/avatar2.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
+             <h4 class="w3-center">Guest</h4>
+             <p class="w3-center"><img src="https://35ht6t2ynx0p1ztf961h81r1-wpengine.netdna-ssl.com/wp-content/uploads/2018/08/generic-avatar.jpg" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
              <hr>
-             <p><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i> Designer, UI</p>
+             <!-- <p><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i> Designer, UI</p>
              <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> London, UK</p>
-             <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i> April 1, 1988</p>
+             <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i> April 1, 1988</p> -->
             </div>
           </div>
           <br>
           
           <!-- Accordion -->
           <div class="w3-card w3-round">
-            <div class="w3-white">
+            <div class="w3-white" style="display:none">
               <button onclick="myFunction(&#39;Demo1&#39;)" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i> My Groups</button>
               <div id="Demo1" class="w3-hide w3-container">
                 <p>Some text..</p>
@@ -131,7 +120,7 @@
           <br>
           
           <!-- Alert Box -->
-          <div class="w3-container w3-display-container w3-round w3-theme-l4 w3-border w3-theme-border w3-margin-bottom w3-hide-small">
+          <div class="w3-container w3-display-container w3-round w3-theme-l4 w3-border w3-theme-border w3-margin-bottom w3-hide-small" style="display:none">
             <span onclick="this.parentElement.style.display=&#39;none&#39;" class="w3-button w3-theme-l3 w3-display-topright">
               <i class="fa fa-remove"></i>
             </span>
@@ -143,13 +132,13 @@
         </div>
         
         <!-- Middle Column -->
-        <div class="w3-col m7">
+        <div class="w3-col m7"  >
         
-          <div class="w3-row-padding">
+          <div class="w3-row-padding" >
             <div class="w3-col m12">
               <div class="w3-card w3-round w3-white">
-                <div class="w3-container w3-padding">
-                  <h6 class="w3-opacity">Making our communities better</h6>
+                <div class="w3-container w3-padding" style="display:none">
+                  <h6 class="w3-opacity"  style="display:none">Making our communities better</h6>
                   <input class="w3-border w3-padding" placeholder="Status: Feeling Patriotic" id="post" type="text" style="width:100%; margin-bottom: 5px">
                   <button type="button" class="w3-button w3-theme" onclick="addPost()"><i class="fa fa-pencil"></i> &nbsp;Post</button> 
                 </div>
@@ -157,15 +146,15 @@
             </div>
           </div>
 
-          <div class="new-comment">
-          </div>
-
+          <div class="new-comment">            
+          </div>            
+          
           <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
             <img src="https://www.w3schools.com/w3images/avatar2.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
             <span class="w3-right w3-opacity">10 min</span>
             <h4>Akwasi Amponsah</h4><br>
             <hr class="w3-clear">
-            <p>I was walking the streets of my neighbourhood and I realized that there are huge potholes in the middle of the road.
+            <p>I was walking the streets of my neighbourhood and I realized that there's a huge pothole in the middle of the road.
               Who's responsible for this?! I'd like to request that it be fixed right now!
             </p>
               <div class="w3-row-padding" style="margin:0 -16px">
@@ -177,79 +166,39 @@
               </div>
             </div>
             <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i> &nbsp;Like</button> 
-            <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i> &nbsp;Comment</button> 
+            <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom" onclick="comment()"><i class="fa fa-comment"></i> &nbsp;Comment</button> 
           </div>
 
           <!-- To put the comment section -->
-          <div class = "w3-container w3-card w3-white w3-round w3-margin"  id = "commenting">
-            <!-- Beginning of one comment portion -->
-            <div class = "row"><div class = "col-md-12"></div></div>
-            <div class = "row"><div class = "col-md-12"></div></div>
-            <div class = "row"><div class = "col-md-12"></div></div>
-            <div class = "row">
-              <div class = "col-md-3">
-                <div class = "row">
-                  <div class = "col-md-4"><a class = "avatar"><img class = "w3-circle" src ="https://ets2.lt/wp-content/uploads/profile_builder/avatars/userID_24995_originalAvatar_Cool-avatars-anonymous-avatar.jpg" width="30px"></a></div>
-                  <div class = "col-md-8"><p>Relevant Authority</p></div>
-                </div>
-              </div>
-              <div class = "col-md-6" style="background-color: #41F3D3">
-                <p>I'm sending someone to work on it right away!</p>
-              </div>
-              <div class = "col-md-3">
-                  <span style="color: #a9a9a9"><em>9 minutes ago</em></span>
-              </div>
-            </div>
-            <!-- End of one comment portion -->
-            <!-- Beginning of one comment portion -->
-            <div class = "row"><div class = "col-md-12"></div></div>
-            <div class = "row"><div class = "col-md-12"></div></div>
-            <div class = "row"><div class = "col-md-12"></div></div>
-            <div class = "row">
-                <div class = "col-md-3">
-                    <span style="color: #a9a9a9"><em>6 minutes ago</em></span>
-                </div>
-              <div class = "col-md-6" style="background-color: #C87CF6">
-                <p>That's much better! It's nice to see the government being proactive.</p>
-              </div>
-              <div class = "col-md-3">
-                  <div class = "row">
-                    <div class = "col-md-4"><a class = "avatar"><img class = "w3-circle" src ="https://www.w3schools.com/w3images/avatar2.png" width="30px"></a></div>
-                    <div class = "col-md-8"><p>Akwasi Amponsah</p></div>
+          <div class = "w3-container w3-card w3-white w3-round w3-margin" style="display: none;" id = "commenting">
+            <ul class = "comment-section">
+              <ul class = "comment-section">
+                <li class = "comments user_comments">
+                  <div class = "information">
+                    <a href = "#">Relevant Authority</a>
+                    <span>9 minutes ago</span>
                   </div>
-                </div>
-            </div>
-            <!-- End of one comment portion -->
-            <!-- Beginning of one comment portion -->
-            <div class = "row"><div class = "col-md-12"></div></div>
-            <div class = "row"><div class = "col-md-12"></div></div>
-            <div class = "row"><div class = "col-md-12"></div></div>
-            <div class = "row">
-              <div class = "col-md-3">
-                <div class = "row">
-                  <div class = "col-md-4"><a class = "avatar"><img class = "w3-circle" src ="https://www.w3schools.com/w3images/avatar6.png" width="30px"></a></div>
-                  <div class = "col-md-8"><p>Maame Ama Annang</p></div>
-                </div>
-              </div>
-              <div class = "col-md-6" style="background-color: #93A6F5">
-                <p>Hmm! I really hope this isn't just a publicity gimmick, but that they actually fix the road.</p>
-              </div>
-              <div class = "col-md-3">
-                  <span style="color: #a9a9a9"><em>1 minute ago</em></span>
-              </div>
-            </div>
-            <!-- End of one comment portion -->
-            <div class = "row">
-              <div class = "col-lg-12">
+                  <a class = "avatar" href="#">
+                    <img src = "https://ets2.lt/wp-content/uploads/profile_builder/avatars/userID_24995_originalAvatar_Cool-avatars-anonymous-avatar.jpg" width="30">
+                  </a>
+                  <p>I'm sending someone to work on it right away!</p>
+                </li>
+                <li class = "comments author_comments">
+                  <div class = "information">
+                    <a href = "#">Akwasi Amponsah</a>
+                    <span>6 minutes ago</span>
+                  </div>
+                  <a class = "avatar" href="#"><img src="https://www.w3schools.com/w3images/avatar2.png" width="30"></a>
+                  <p>That's great! It's nice to see the government being proactive.</p>
+                </li>
+                <!-- Add more comments -->
+                <li class = "write-new">
                   <form action = "#" method = "POST">
-                      <textarea placeholder="Please add your comment here" name = "comments" style="width: 100%;"></textarea>
-                      <div>
-                        <img class = "w3-circle" src = "https://www.w3schools.com/w3images/avatar2.png" width="30">
-                        <button type="submit">Submit comment</button>
-                      </div>
-                    </form>
-              </div>
-            </div>
+                    <textarea placeholder="Please add your comment here" name = "comments"></textarea>
+                  </form>
+                </li>
+              </ul>
+            </ul>
           </div>
           <!-- End of comment section -->
           
@@ -293,23 +242,6 @@
               <p><strong>Holiday</strong></p>
               <p>Friday 15:00</p>
               <p><button class="w3-button w3-block w3-theme-l4">Info</button></p>
-            </div>
-          </div>
-          <br>
-          
-          <div class="w3-card w3-round w3-white w3-center">
-            <div class="w3-container">
-              <p>Friend Request</p>
-              <img src="https://www.w3schools.com/w3images/avatar6.png" alt="Avatar" style="width:50%"><br>
-              <span>Maame Ama Annang</span>
-              <div class="w3-row w3-opacity">
-                <div class="w3-half">
-                  <button class="w3-button w3-block w3-green w3-section" title="Accept"><i class="fa fa-check"></i></button>
-                </div>
-                <div class="w3-half">
-                  <button class="w3-button w3-block w3-red w3-section" title="Decline"><i class="fa fa-remove"></i></button>
-                </div>
-              </div>
             </div>
           </div>
           <br>
