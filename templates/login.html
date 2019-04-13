@@ -1,0 +1,18 @@
+    <div class= "container signup">
+          <form method='POST', action='/login'>
+              {{ form.hidden_tag() }}
+             {{ form.firstName.label}} {{ form.firstName(class_ = "form-c") }} 
+             <br>
+             {{ form.lastName.label}} {{ form.lastName(class_ = "form-c") }}
+             <br>
+             {{ form.classof.label}} {{ form.classof(class_ = "form-c") }}
+             <br>
+             {{ form.major.label}} {{ form.major(class_ = "form-c") }}
+             <br>
+             {{ form.email.label}} {{ form.email(class_ = "form-c") }}
+             <br>
+            {{ form.password.label}} {{ form.password(class_ = "form-c") }}
+             <br>
+             {{ form.submit(class_ = "form-c btn btn-primary")}}
+          </form>
+    </div> 
